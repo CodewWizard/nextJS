@@ -1,10 +1,29 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+
+import { useState } from "react";
 
 export default function Home() {
+  const [name, setName] = useState("default");
+  const handleClick =()=>{
+      setName("madiha")
+  }
   return (
     <>
-      <h1>hello world</h1>
+      <div>
+        {name}
+        <br/>
+       <User name="madiha"/>
+       <button onClick={handleClick}>submit</button>
+      </div>
+    </>
+  );
+}
+
+
+const User=(props)=>{
+  return(
+    <>
+      <h1>Hello world {props.name}</h1>
     </>
   )
 }
