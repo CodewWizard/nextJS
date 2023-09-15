@@ -8,7 +8,7 @@ export default function Home() {
   }
   return (
     <>
-      <div>
+      <div> 
         {name}
         <br/>
        <User name="madiha"/>
