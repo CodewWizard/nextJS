@@ -1,27 +1,28 @@
 'use client'
-import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [name, setName] = useState("default");
-  const handleClick =()=>{
-      setName("madiha")
+  const router = useRouter();
+  const navigate =(routeName)=>{
+    router.push(routeName);
   }
+
   return (
     <>
       <div> 
-        {name}
         <br/>
-       <User name="madiha"/>
-       <button onClick={handleClick}>submit</button>
+       <Link href="/About"> Go to About page</Link>
+       <br/>
+       <br/>
+       <Link href="/Login"> Go to Login page</Link>
+       <br/>
+       <br/>
+       <button onClick={()=>{navigate('/About')}}>About</button>
+       <br/>
+       <br/>
+       <button onClick={()=>{navigate('/Login')}}>Login</button>
       </div>
     </>
   );
-}
-
-const User=(props)=>{
-  return(
-    <>
-      <h1>Hello world {props.name}</h1>
-    </>
-  )
 }
