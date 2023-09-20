@@ -7,7 +7,6 @@ export default function Home() {
   const navigate =(routeName)=>{
     router.push(routeName);
   }
-
   return (
     <>
       <div> 
